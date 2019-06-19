@@ -1,10 +1,10 @@
-def convertTemp(file_name, cols, rows):
+def convertTemp(file_name):
     # setting up the files to read and write
     fileObj = open(file_name, "r")
     file_celsius = file_name.replace('k', 'c')
     file_farenheit = file_name.replace('k', 'f')
     celsiusFileObj = open(file_celsius, 'w')
-    farenheitFileObj = open(file_farenheit, 'w')
+    farenheitFileObj = open(file_farenheit, 'w')  
     # setting up a counter method
     file_num = 0
     column_num = 1
@@ -13,6 +13,8 @@ def convertTemp(file_name, cols, rows):
         if file_num < 7:
             celsiusFileObj.write(line)
             farenheitFileObj.write(line)
+            if file_num == 1:
+                cols = int(line[14:])
         else:
             line = line.strip()
             listical = line.split(" ")
@@ -29,8 +31,6 @@ def convertTemp(file_name, cols, rows):
     celsiusFileObj.close()
 
 # calling 
-cols = 72
-rows = 48
-convertTemp('k_20181007.txt', cols, rows)
-convertTemp('k_20181108.txt', cols, rows)
-convertTemp('k_20190127.txt', cols, rows)
+convertTemp('k_20181007.txt')
+convertTemp('k_20181108.txt')
+convertTemp('k_20190127.txt')
