@@ -29,8 +29,8 @@ def convertTemp(file_name, cols, rows):
     celsiusFileObj.close()
 
 # calling 
-cols = 1592
-rows = 1531
-convertTemp('paradiseca_l8_tirs_k_20181007.txt', cols, rows)
-convertTemp('paradiseca_l8_tirs_k_20181108.txt', cols, rows)
-convertTemp('paradiseca_l8_tirs_k_20190127.txt', cols, rows)
+cols = 72
+rows = 48
+convertTemp('k_20181007.txt', cols, rows)
+convertTemp('k_20181108.txt', cols, rows)
+convertTemp('k_20190127.txt', cols, rows)
